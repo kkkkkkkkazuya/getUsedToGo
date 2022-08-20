@@ -35,6 +35,17 @@ func numCal(o, p int) (a int, b int) {
 	return
 }
 
+// 構造体
+type Student struct {
+	name          string
+	math, english float64
+}
+
+type User struct {
+	gender string
+	age    int
+}
+
 func main() {
 	// var a = "initial"
 	// fmt.Println(a)
@@ -87,4 +98,33 @@ func main() {
 	numCalResult1, numCalResult2 := numCal(12, 3)
 
 	fmt.Println(numCalResult1, numCalResult2)
+
+	//無名関数
+	hello := func(greeting string) {
+		fmt.Println(greeting)
+	}
+
+	hello("Good morning")
+
+	func(greetingNight string) {
+		fmt.Println(greetingNight)
+	}("Good evening")
+
+	//構造体の初期化
+
+	// s := Student{"kojima", 80, 70}
+	// fmt.Println(s)
+
+	s := Student{name: "kazuya", english: 80}
+	fmt.Println(s)
+
+	//:=を使用するバージョン
+	t := User{gender: "male", age: 20}
+	fmt.Println(t)
+
+	//varを使って直接代入バージョン
+	var u User
+	u.gender = "female"
+	u.age = 23
+	fmt.Println(u)
 }
